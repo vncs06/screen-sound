@@ -19,6 +19,7 @@ void ShowWelcomeMessage()
 }
 ShowWelcomeMessage();
 
+//Menu Options
 void ShowOptions()
 {
     
@@ -40,12 +41,11 @@ void ShowOptions()
 
 }
 
+//Register band function
 void RegisterBand()
 {
     Console.Clear();
-    Console.WriteLine("*******************");
-    Console.WriteLine("Register your bands");
-    Console.WriteLine("*******************\n");
+    ShowOptionTitle("Register your bands");
     Console.Write("Type the name of the band that you want to register: ");
     string Band = Console.ReadLine()!;
     BandList.Add(Band);
@@ -57,6 +57,7 @@ void RegisterBand()
 
 }
 
+//View registered function
 void ViewRegisteredBands()
 {
     Console.Clear();
@@ -74,6 +75,16 @@ void ViewRegisteredBands()
     Console.Clear();
     ShowWelcomeMessage();
     ShowOptions();
+
+}
+
+void ShowOptionTitle(string title)
+{
+    int TitleLetters = title.Length;
+    string asteriscos = string.Empty.PadLeft(title.Length, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine(title);
+    Console.WriteLine($"{asteriscos}\n");
 
 }
 
